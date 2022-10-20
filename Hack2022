@@ -1763,160 +1763,65 @@ b
 21.
 Dijkstra’s Algorithm cannot be applied on which of the following?
 
+Implments stack using array c++ code 
+#include<stdio.h>
+#include<conio.h>
 
-Directed and weighted graphs
+#define SIZE 10
 
-Graphs having negative weight function
+void push(int);
+void pop();
+void display();
 
-Unweighted graphs
+int stack[SIZE], top = -1;
 
-Undirected and unweighted graphs
-
-Blog
-Community
-About Us
-FAQ
-Contact Us
-Terms
-Privacy Policy
-Practice Questions
-Programming
-Scripting
-System Design
-Databases
-Puzzle
-Fast Track Courses
-Python
-Java
-C++
-Javascript
-Online Interviewbit Compilers
-Online C Compiler
-Online C++ Compiler
-Online Java Compiler
-Online Javascript Compiler
-Online Python Compiler
-
-Interview Preparation
-java interview questions
-javascript interview questions
-sql interview questions
-python cheat sheet
-java mcq
-python interview questions
-angular interview questions
-spring boot interview questions
-dbms interview questions
-oops interview questions
-dbms mcq
-selenium interview questions
-javascript cheat sheet
-c++ cheat sheet
-hr interview questions
-html interview questions
-c interview questions
-c++ mcq
-data structure mcq
-c++ interview questions
-machine learning mcq
-c# interview questions
-c programming mcq
-.net interview questions
-react interview questions
-node js interview questions
-php interview questions
-css interview questions
-java 8 interview questions
-python mcq
-mvc interview questions
-git cheat sheet
-power bi interview questions
-javascript mcq
-microservices interview questions
-mysql interview questions
-aws interview questions
-html cheat sheet
-api testing interview questions
-networking interview questions
-data structure interview questions
-hibernate interview questions
-asp.net interview questions
-spring interview questions
-linux interview questions
-rest api interview questions
-web api interview questions
-software testing interview questions
-machine learning interview questions
-jenkins interview questions
-devops interview questions
-salesforce interview questions
-docker interview questions
-kubernetes interview questions
-tableau interview questions
-os interview questions
-scrum master interview questions
-django interview questions
-laravel interview questions
-jquery interview questions
-data science interview questions
-android interview questions
-java interview questions for 5 years experience
-asp.net mvc interview questions
-automation testing interview questions
-mongodb interview questions
-informatica interview questions
-system design interview questions
-oracle interview questions
-data analyst interview questions
-design patterns interview questions
-big data interview questions
-sap interview questions
-tcs interview questions
-accenture interview questions
-infosys interview questions
-capgemini interview questions
-sql cheat sheet
-operating system mcq
-wipro interview questions
-amazon interview questions
-cognizant interview questions
-google interview questions
-deloitte interview questions
-zoho interview questions
-hcl interview questions
-servicenow interview questions
-sap abap interview questions
-mindtree interview questions
-tech mahindra interview questions
-goldman sachs interview questions
-apisero interview questions
-dxc interview questions
-genpact interview questions
-flipkart interview questions
-adobe interview questions
-accolite interview questions
-cisco interview questions
-facebook interview questions
-siemens interview questions
-linkedin interview questions
-directi interview questions
-paytm interview questions
-yahoo interview questions
-markdown cheat sheet
-linux commands cheat sheet
-java cheat sheet
-bootstrap cheat sheet
-software engineering mcq
-computer network mcq
-html mcq
-control system mcq
-web technology mcq
-artificial intelligence mcq
-software testing mcq
-cyber security mcq
-iot mcq
-sql mcq
-compiler design mcq
-View All
-Unlock the complete InterviewBit
-experience for free
+void main()
+{
+   int value, choice;
+   clrscr();
+   while(1){
+      printf("\n\n***** MENU *****\n");
+      printf("1. Push\n2. Pop\n3. Display\n4. Exit");
+      printf("\nEnter your choice: ");
+      scanf("%d",&choice);
+      switch(choice){
+	 case 1: printf("Enter the value to be insert: ");
+		 scanf("%d",&value);
+		 push(value);
+		 break;
+	 case 2: pop();
+		 break;
+	 case 3: display();
+		 break;
+	 case 4: exit(0);
+	 default: printf("\nWrong selection!!! Try again!!!");
+      }
+   }
+}
+void push(int value){
+   if(top == SIZE-1)
+      printf("\nStack is Full!!! Insertion is not possible!!!");
+   else{
+      top++;
+      stack[top] = value;
+      printf("\nInsertion success!!!");
+   }
+}
+void pop(){
+   if(top == -1)
+      printf("\nStack is Empty!!! Deletion is not possible!!!");
+   else{
+      printf("\nDeleted : %d", stack[top]);
+      top--;
+   }
+}
+void display(){
+   if(top == -1)
+      printf("\nStack is Empty!!!");
+   else{
+      int i;
+      printf("\nStack elements are:\n");
+      for(i=top; i>=0; i--)
+	 printf("%d\n",stack[i]);
+   }
+}
