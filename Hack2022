@@ -1767,7 +1767,7 @@ Implments stack using array c++ code
 #include<stdio.h>
 #include<conio.h>
 
-#define SIZE 10
+#define SIZE 20
 
 void push(int);
 void pop();
